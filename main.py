@@ -487,4 +487,4 @@ async def serverinfo(ctx):
 # Fin de la commande serverinfo
 
 
-client.run(dotenv_values.token)
+client.run(process.env.token)
