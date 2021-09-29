@@ -6,8 +6,6 @@ from discord import *
 from discord.colour import Color
 from discord.ext import commands
 from discord.ext.commands.core import command
-from config import token
-from config import prefix
 from datetime import *
 from time import *
 import random
@@ -22,7 +20,7 @@ from discord.ext.commands import check
 import os
 import sys
 
-client = commands.Bot(command_prefix = prefix)
+client = commands.Bot(command_prefix = process.env.prefix)
 client.remove_command("help")
 
 
@@ -487,4 +485,4 @@ async def serverinfo(ctx):
 # Fin de la commande serverinfo
 
 
-client.run(token)
+client.run(process.env.token)
