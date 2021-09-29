@@ -17,10 +17,11 @@ import os
 client = commands.Bot(command_prefix = "+")
 client.remove_command("help")
 
+heures = datetime.now().strftime('%H:%M:%S')
 
 @client.event
 async def on_ready():
-    heures = datetime.now().strftime('%H:%M:%S')
+    global heures
     print(f"----------------------------------------------------------------------\nenregistrer en temps que {client.user.name} Voici l'id de mon createur:\n 658316777981345792 \nvoici mon id:\n{client.user.id}\ncette session a etais ouverte a {heures}\n----------------------------------------------------------------------")
     await client.change_presence(activity = discord.Game("Call of duty Mobile"))
 
@@ -108,7 +109,7 @@ async def help(ctx, message = None):
         embed.add_field(name="uttilisation:", value="`+snipe`", inline=True)
         await ctx.send(embed=embed)
     if message == None:
-        heures = datetime.now().strftime('%H:%M:%S')
+        global heures
         embed=discord.Embed(title="Liste des commandes 🍏", description="**Prefix** `+`\n**Plus d'information** `+help <command>`", color=0x3ee378)
         embed.set_thumbnail(url="https://c.tenor.com/_DOAnKatq7EAAAAM/cod-chost.gif")
         embed.add_field(name="🤷‍♂️・User", value="`help` `ping` `pp` `say`", inline=False)
