@@ -1,5 +1,3 @@
-from asyncio import events
-from inspect import Traceback
 from asyncio.runners import run
 import discord
 from discord import *
@@ -7,18 +5,14 @@ from discord.colour import Color
 from discord.ext import commands
 from discord.ext.commands.core import command
 from datetime import *
+from datetime import time
 from time import *
 import random
-import string
-import secrets
 import asyncio
 import aiohttp
-from io import BytesIO
-import requests, json
 from discord.utils import get
 from discord.ext.commands import check
 import os
-import sys
 
 client = commands.Bot(command_prefix = "+")
 client.remove_command("help")
