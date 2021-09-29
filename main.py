@@ -14,6 +14,7 @@ import secrets
 import asyncio
 import aiohttp
 from io import BytesIO
+from dotenv.main import dotenv_values
 import requests, json
 from discord.utils import get
 from discord.ext.commands import check
@@ -486,4 +487,4 @@ async def serverinfo(ctx):
 # Fin de la commande serverinfo
 
 
-client.run(process.env.token)
+client.run(dotenv_values.token)
