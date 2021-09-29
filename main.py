@@ -20,7 +20,6 @@ from discord.utils import get
 from discord.ext.commands import check
 import os
 import sys
-from dotenv import load_dotenv
 
 client = commands.Bot(command_prefix = "+")
 client.remove_command("help")
@@ -487,4 +486,4 @@ async def serverinfo(ctx):
 # Fin de la commande serverinfo
 
 
-client.run(process.env.token)
+client.run(os.environ['token'])
