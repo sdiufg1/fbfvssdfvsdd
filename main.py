@@ -19,6 +19,7 @@ from discord.utils import get
 from discord.ext.commands import check
 import os
 import sys
+from dotenv import load_dotenv
 
 client = commands.Bot(command_prefix = "+")
 client.remove_command("help")
