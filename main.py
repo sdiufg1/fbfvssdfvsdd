@@ -14,7 +14,6 @@ import secrets
 import asyncio
 import aiohttp
 from io import BytesIO
-from dotenv.main import dotenv_values
 import requests, json
 from discord.utils import get
 from discord.ext.commands import check
