@@ -20,7 +20,7 @@ from discord.ext.commands import check
 import os
 import sys
 
-client = commands.Bot(command_prefix = process.env.prefix)
+client = commands.Bot(command_prefix = "+")
 client.remove_command("help")
 
 
