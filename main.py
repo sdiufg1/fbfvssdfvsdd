@@ -100,9 +100,12 @@ async def snipe(message):
 
 # Fin du code de la commande snipe.
 
+none = None
+
 # Debut de la commande pour le help.
 @client.command()
-async def help(ctx, message = None):
+async def help(ctx, message = none):
+    global none
     if message == "snipe":
         embed=discord.Embed(title="Snipe Command", description="Cette commande sert a reccuperer le dernier message supprimer par un uttilisateur", color=0x07caf3)
         embed.set_thumbnail(url="https://cdn.discordapp.com/emojis/871526418578825226.png?v=1")
