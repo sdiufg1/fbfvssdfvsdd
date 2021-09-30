@@ -102,13 +102,13 @@ async def snipe(message):
 
 # Debut de la commande pour le help.
 @client.command()
-async def help(ctx, message = ""):
+async def help(ctx, message = None):
     if message == "snipe":
         embed=discord.Embed(title="Snipe Command", description="Cette commande sert a reccuperer le dernier message supprimer par un uttilisateur", color=0x07caf3)
         embed.set_thumbnail(url="https://cdn.discordapp.com/emojis/871526418578825226.png?v=1")
         embed.add_field(name="uttilisation:", value="`+snipe`", inline=True)
         await ctx.send(embed=embed)
-    if message == "":
+    if message == None:
         global heures
         embed=discord.Embed(title="Liste des commandes 🍏", description="**Prefix** `+`\n**Plus d'information** `+help <command>`", color=0x3ee378)
         embed.set_thumbnail(url="https://c.tenor.com/_DOAnKatq7EAAAAM/cod-chost.gif")
