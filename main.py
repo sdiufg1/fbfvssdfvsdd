@@ -111,7 +111,7 @@ async def help(ctx, message = none):
         embed.set_thumbnail(url="https://cdn.discordapp.com/emojis/871526418578825226.png?v=1")
         embed.add_field(name="uttilisation:", value="`+snipe`", inline=True)
         await ctx.send(embed=embed)
-    if message == None:
+    if message == none:
         global heures
         embed=discord.Embed(title="Liste des commandes 🍏", description="**Prefix** `+`\n**Plus d'information** `+help <command>`", color=0x3ee378)
         embed.set_thumbnail(url="https://c.tenor.com/_DOAnKatq7EAAAAM/cod-chost.gif")
