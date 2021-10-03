@@ -109,13 +109,14 @@ async def help(ctx, message = None):
         embed.add_field(name="uttilisation:", value="`+snipe`", inline=True)
         await ctx.send(embed=embed)
     if message == None:
+        embedinfo = discord.Embed()
         global heures
-        embed=discord.Embed(title="Liste des commandes 🍏", description="**Prefix** `+`\n**Plus d'information** `+help <command>`", color=0x3ee378)
-        embed.set_thumbnail(url="https://c.tenor.com/_DOAnKatq7EAAAAM/cod-chost.gif")
-        embed.add_field(name="🤷‍♂️・User", value="`help` `ping` `pp` `say`", inline=False)
-        embed.add_field(name="👌・Mod", value="`snipe` `nuke` `mute` `voicemove` `lock` `unlock`", inline=False)
-        embed.add_field(name="🎉・Fun", value="`emote` `chinese` `coinflip` `cat` `hug` `dog` `duck`", inline=False)
-        embed.set_footer(text=f"Commande envoyer par {ctx.author.name} à {heures}")
+        embedinfo=discord.Embed(title="Liste des commandes 🍏", description="**Prefix** `+`\n**Plus d'information** `+help <command>`", color=0x3ee378)
+        embedinfo.set_thumbnail(url="https://c.tenor.com/_DOAnKatq7EAAAAM/cod-chost.gif")
+        embedinfo.add_field(name="🤷‍♂️・User", value="`help` `ping` `pp` `say`", inline=False)
+        embedinfo.add_field(name="👌・Mod", value="`snipe` `nuke` `mute` `voicemove` `lock` `unlock`", inline=False)
+        embedinfo.add_field(name="🎉・Fun", value="`emote` `chinese` `coinflip` `cat` `hug` `dog` `duck`", inline=False)
+        embedinfo.set_footer(text=f"Commande envoyer par {ctx.author} à {heures}", icon_url=ctx.author.avatar_url))
         await ctx.send(embed=embed)
     if message == "ping":
         embed=discord.Embed(title="Ping Command", description="Cette commande sert a regarder ma latence ^^", color=0x07caf3)
@@ -478,9 +479,5 @@ async def serverinfo(ctx):
   await ctx.send(embed=embed)
 
 # Fin de la commande serverinfo
-
-@client.command()
-async def test14(ctx):
-    print(ctx.author.avatar_url)
 
 client.run(os.environ['token'])
