@@ -479,7 +479,7 @@ async def serverinfo(ctx):
 
 # Fin de la commande serverinfo
 
-@client/command()
+@client.command()
 async def test14(ctx):
     print(ctx.author.avatar_url)
 
