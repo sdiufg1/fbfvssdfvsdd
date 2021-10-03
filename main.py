@@ -196,7 +196,7 @@ async def help(ctx):
         embed.add_field(name="🤷‍♂️・User", value="`help` `ping` `pp` `say`", inline=False)
         embed.add_field(name="👌・Mod", value="`snipe` `nuke` `mute` `voicemove` `lock` `unlock`", inline=False)
         embed.add_field(name="🎉・Fun", value="`emote` `chinese` `coinflip` `cat` `hug` `dog` `duck`", inline=False)
-        embed.set_footer(text=f"Commande envoyer par {ctx.author.name} à ", icon_url = ctx.author.avatar_url)
+        embed.set_footer(text=f"Commande envoyer par {ctx.author.name} à ")
         await ctx.send(embed=embed)
 
 
