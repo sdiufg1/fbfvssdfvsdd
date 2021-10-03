@@ -100,7 +100,7 @@ async def snipe(message):
 
 # Fin du code de la commande snipe.
 
-# Debut de la commande pour le cmd.
+# Debut de la commande pour le help.
 @client.command()
 async def cmd(ctx, message = None):
     global none
@@ -108,6 +108,15 @@ async def cmd(ctx, message = None):
         embed=discord.Embed(title="Snipe Command", description="Cette commande sert a reccuperer le dernier message supprimer par un uttilisateur", color=0x07caf3)
         embed.set_thumbnail(url="https://cdn.discordapp.com/emojis/871526418578825226.png?v=1")
         embed.add_field(name="uttilisation:", value="`+snipe`", inline=True)
+        await ctx.send(embed=embed)
+    if message == None:
+        global heures
+        embed=discord.Embed(title="Liste des commandes 🍏", description="**Prefix** `+`\n**Plus d'information** `+help <command>`", color=0x3ee378)
+        embed.set_thumbnail(url="https://c.tenor.com/_DOAnKatq7EAAAAM/cod-chost.gif")
+        embed.add_field(name="🤷‍♂️・User", value="`help` `ping` `pp` `say`", inline=False)
+        embed.add_field(name="👌・Mod", value="`snipe` `nuke` `mute` `voicemove` `lock` `unlock`", inline=False)
+        embed.add_field(name="🎉・Fun", value="`emote` `chinese` `coinflip` `cat` `hug` `dog` `duck`", inline=False)
+        embed.set_footer(text=f"Commande envoyer par {ctx.author.name} à {heures}", icon_url = ctx.author.avatar_url)
         await ctx.send(embed=embed)
     if message == "ping":
         embed=discord.Embed(title="Ping Command", description="Cette commande sert a regarder ma latence ^^", color=0x07caf3)
@@ -186,20 +195,7 @@ async def cmd(ctx, message = None):
         await ctx.send(embed=embed)
 
 
-# Fin de la commande cmd.
-
-# Debut de la commande help
-@client.command()
-async def help(ctx):
-        embed=discord.Embed(title="Liste des commandes 🍏", description="**Prefix** `+`\n**Plus d'information** `+help <command>`", color=0x3ee378)
-        embed.set_thumbnail(url="https://c.tenor.com/_DOAnKatq7EAAAAM/cod-chost.gif")
-        embed.add_field(name="🤷‍♂️・User", value="`help` `ping` `pp` `say`", inline=False)
-        embed.add_field(name="👌・Mod", value="`snipe` `nuke` `mute` `voicemove` `lock` `unlock`", inline=False)
-        embed.add_field(name="🎉・Fun", value="`emote` `chinese` `coinflip` `cat` `hug` `dog` `duck`", inline=False)
-        embed.set_footer(text=f"Commande envoyer par {ctx.author.name} à ")
-        await ctx.send(embed=embed)
-
-
+# Fin de la commande help
 
 # Debut de la commande pp
 
