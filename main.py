@@ -30,7 +30,7 @@ async def on_ready():
 @client.event
 async def on_command_error(ctx, error):
 	if isinstance(error, commands.CommandNotFound):
-		await ctx.send("La commande que tu a taper existe pas.")
+		await ctx.send("La commande que tu a tapé n'existe pas.")
 	if isinstance(error, commands.MissingRequiredArgument):
 		await ctx.send("Ta pas oublier un truc la ?")
 	elif isinstance(error, commands.MissingPermissions):
