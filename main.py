@@ -116,7 +116,6 @@ async def help(ctx, message = None):
         embedinfo.add_field(name="🤷‍♂️・User", value="`help` `ping` `pp` `say`", inline=False)
         embedinfo.add_field(name="👌・Mod", value="`snipe` `nuke` `mute` `voicemove` `lock` `unlock`", inline=False)
         embedinfo.add_field(name="🎉・Fun", value="`emote` `chinese` `coinflip` `cat` `hug` `dog` `duck`", inline=False)
-        embedinfo.set_footer(text=f"Commande envoyer par {ctx.author} à test")
         await ctx.send(embed=embed)
     if message == "ping":
         embed=discord.Embed(title="Ping Command", description="Cette commande sert a regarder ma latence ^^", color=0x07caf3)
