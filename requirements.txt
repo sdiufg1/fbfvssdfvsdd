@@ -1,4 +1,4 @@
-git+https://github.com/Rapptz/discord.py
+discord.py
 dnspython==2.1.0
 requests==2.21.0
 requests-oauthlib==1.0.0
