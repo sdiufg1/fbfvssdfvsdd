@@ -405,8 +405,8 @@ async def nuke(ctx, channel: discord.TextChannel = None):
 # Fin de la commande nuke
 
 
-youpi = discord.utils.get(client.emojis, name="youpi")
-def in_voice_channel():  # check to make sure ctx.author.voice.channel exists
+
+def in_voice_channel():  # check pour voir si le channel ctx existe
     def predicate(ctx):
         return ctx.author.voice and ctx.author.voice.channel
     return check(predicate)
@@ -417,8 +417,7 @@ def in_voice_channel():  # check to make sure ctx.author.voice.channel exists
 async def voicemove(ctx, *, channel : discord.VoiceChannel):
     for members in ctx.author.voice.channel.members:
         await members.move_to(channel)
-        global youpi
-    await ctx.send(f"Tous les membre ont etais deplacer aves succes {youpi}")
+    await ctx.send(f"Tous les membre ont etais deplacer aves succes <:youpi:901170938970783824>")
 
 @client.command()
 @commands.has_permissions(manage_channels = True)
