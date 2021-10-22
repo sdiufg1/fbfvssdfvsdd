@@ -181,7 +181,7 @@ async def help(ctx, message = None):
     if message == "lock":
         embed=discord.Embed(title="Lock Command", description="Cette commande permet de bloquer un salon", color=0x07caf3)
         embed.set_thumbnail(url="https://cdn.discordapp.com/emojis/871526418578825226.png?v=1")
-        embed.add_field(name="uttilisation:", value="`+voicemoov`", inline=True)
+        embed.add_field(name="uttilisation:", value="`+voicemove`", inline=True)
         await ctx.send(embed=embed)
     if message == "unlock":
         embed=discord.Embed(title="Unlock Command", description="Cette commande permet de debloquer un salon", color=0x07caf3)
@@ -405,7 +405,7 @@ async def nuke(ctx, channel: discord.TextChannel = None):
 # Fin de la commande nuke
 
 
-youpi = discord.utils.get(client.emojis, name="youpi")
+youpi = ("<:youpi:901170938970783824>")
 def in_voice_channel():  # check to make sure ctx.author.voice.channel exists
     def predicate(ctx):
         return ctx.author.voice and ctx.author.voice.channel
