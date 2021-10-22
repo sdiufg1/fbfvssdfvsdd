@@ -404,8 +404,8 @@ async def nuke(ctx, channel: discord.TextChannel = None):
 
 # Fin de la commande nuke
 
+# Debut de la commande voicemove
 
-youpi = discord.utils.get(client.emojis, name="youpi")
 def in_voice_channel():  # check pour voir si le channel ctx existe
     def predicate(ctx):
         return ctx.author.voice and ctx.author.voice.channel
@@ -417,8 +417,12 @@ def in_voice_channel():  # check pour voir si le channel ctx existe
 async def voicemove(ctx, *, channel : discord.VoiceChannel):
     for members in ctx.author.voice.channel.members:
         await members.move_to(channel)
-    global youpi
+    youpi = discord.utils.get(client.emojis, name="youpi")
     await ctx.send(f"Tous les membre ont etais deplacer aves succes {youpi}")
+
+# Fin de la commande voicemove
+
+# Debut de la commande lock
 
 @client.command()
 @commands.has_permissions(manage_channels = True)
@@ -427,6 +431,10 @@ async def lock(ctx):
     await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=False)
     await ctx.send(f"Channel Bloquer par <@{id}>")
 
+# Fin de la commande lock
+
+# Debut de la commande unlock
+
 @client.command()
 @commands.has_permissions(manage_channels=True)
 async def unlock(ctx):
@@ -434,18 +442,7 @@ async def unlock(ctx):
     await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=True)
     await ctx.send(f"Channel Debloquer par <@{id}>")
 
-@client.command()
-@commands.is_owner()
-async def zoulo(ctx):
-    message = ctx.message
-    await message.delete()
-    embed=discord.Embed(title="**TICKET INFO**", color=0x12c456)
-    embed.add_field(name="Demande de moderation", value="Créer un ticket pour les modérations est totalement autorisé seulement dans le cas ou un modérateur ou owner demande des recrutements de modérateurs", inline=False)
-    embed.add_field(name="Demande de join dans le clan", value="Vous pouvez a tout moments créer un ticket pour demander de join le clan ont vous donneras ensuite toute les informations qu'il faut dans le ticket (questionnaires phases de test etc...).)", inline=False)
-    embed.add_field(name="Reports", value="Vous pouvez aussi report un joueur que ce soit dans discord ou dans le clan (insultes,cheats,pub mp, etc...).", inline=False)
-    embed.add_field(name="Informations", value="Vous pouvez aussi créer un ticket si vous avez besoin de plus d'informations sur le clan ou tout autres questions concernant le clan ou le serveur discord.", inline=False)
-    embed.add_field(name="Interditions", value="Il est strictement interdit de créer un ticket sans aucune raison un missclick arrive parfois, cela seras tolérer un spam ticket seras suivis d'un ban 24h du serveur merci de votre compréhension.", inline=False)
-    await ctx.send(embed=embed)
+# fin de la commande unlock
 
 # Debut de la commande serverinfo
 
