@@ -111,13 +111,12 @@ async def help(ctx, message = None):
         await ctx.send(embed=embed)
     if message == None:
         embedinfo = discord.Embed()
-        USer = ctx.author
         embedinfo=discord.Embed(title="Liste des commandes 🍏", description="**Prefix** `+`\n**Plus d'information** `+help <command>`", color=0x3ee378)
         embedinfo.set_thumbnail(url="https://c.tenor.com/_DOAnKatq7EAAAAM/cod-chost.gif")
         embedinfo.add_field(name="🤷‍♂️・User", value="`help` `ping` `pp` `say`", inline=False)
         embedinfo.add_field(name="👌・Mod", value="`snipe` `nuke` `mute` `voicemove` `lock` `unlock`", inline=False)
         embedinfo.add_field(name="🎉・Fun", value="`emote` `chinese` `coinflip` `cat` `hug` `dog` `duck`", inline=False)
-        embedinfo.set_footer(text=f"Commande envoyer par {ctx.author} à test", icon_url=USer.avatar_url)
+        embedinfo.set_footer(text=f"Commande envoyer par {ctx.author} à test")
         await ctx.send(embed=embed)
     if message == "ping":
         embed=discord.Embed(title="Ping Command", description="Cette commande sert a regarder ma latence ^^", color=0x07caf3)
