@@ -384,10 +384,10 @@ async def nuke(ctx, channel: discord.TextChannel = None):
         return ctx.author == m.author and isinstance(m.channel, discord.DMChannel)
     try:
         test = await client.wait_for('message', check=check, timeout=60)
-        if test.content == "lkytgrde":
+        if test.content == "password":
             await ctx.author.send("Bon mot de passe jfais peter le salon.")
             await ctx.send("Le mot de passe est le bon !")
-        if test.content != "lkytgrde":
+        if test.content != "password":
             await ctx.author.send("Mauvais mot de passe recommence la commande !")
             await ctx.send("Le mot de passe qui ma etais envoyer en mp est pas le bon")
             return False
